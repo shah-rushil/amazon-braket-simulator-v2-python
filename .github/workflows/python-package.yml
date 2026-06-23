@@ -22,7 +22,7 @@ jobs:
         os: [ubuntu-latest, macos-latest, windows-latest]
         python-version: ["3.11", "3.12", "3.13"]
     steps:
-    - uses: actions/checkout@v6.0.2
+    - uses: actions/checkout@v7.0.0
     - name: Install juliaup
       uses: julia-actions/install-juliaup@v3
       with:
@@ -43,5 +43,5 @@ jobs:
       run: |
         tox -e unit-tests
     - name: Upload coverage report to Codecov
-      uses: codecov/codecov-action@v5
+      uses: codecov/codecov-action@v7
       if: ${{ strategy.job-index == 0 }}
